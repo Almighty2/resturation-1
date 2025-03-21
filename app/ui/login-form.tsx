@@ -5,62 +5,72 @@ import { ArrowRightIcon } from "@heroicons/react/24/solid"
 
 export default function LoginForm(){
     return (
-        <form className="space-y-3">
-            <div className="flex-1 rounded-lg bg-gray-50 px-6 pb-4 pt-8">
-                <h1 className={`${lusitana.className} mb-3 text-2xl`}>
-                Connexion
-                </h1>
-                <div className="w-full">
-                    <div>
-                        <label
-                            className="mb-3 mt-5 block text-xs font-medium text-gray-900"
-                            htmlFor="email"
-                        >
-                            Email
+        <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+                <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+                    <form action="#" method="POST" className="space-y-6">
+                        <div>
+                        <label htmlFor="email" className="block text-sm/6 font-medium text-gray-900">
+                            Email address
                         </label>
-                        <div className="relative">
+                        <div className="mt-2">
                             <input
-                                className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-500"
-                                id="email"
-                                type="email"
-                                name="email"
-                                placeholder="Entrez votre adresse e-mail"
-                                required
+                            id="email"
+                            name="email"
+                            type="email"
+                            required
+                            autoComplete="email"
+                            className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                             />
-                            <AtSymbolIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
                         </div>
-                    </div>
-                    <div className="mt-4">
-                        <label
-                            className="mb-3 mt-5 block text-xs font-medium text-gray-900"
-                            htmlFor="password"
+                        </div>
+
+                        <div>
+                        <div className="flex items-center justify-between">
+                            <label htmlFor="password" className="block text-sm/6 font-medium text-gray-900">
+                            Password
+                            </label>
+                            <div className="text-sm">
+                            <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
+                                Forgot password?
+                            </a>
+                            </div>
+                        </div>
+                        <div className="mt-2">
+                            <input
+                            id="password"
+                            name="password"
+                            type="password"
+                            required
+                            autoComplete="current-password"
+                            className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                            />
+                        </div>
+                        </div>
+
+                        <div>
+                        <button
+                            type="submit"
+                            className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                         >
-                            Mot de passe
-                        </label>
-                        <div className="relative">
-                            <input
-                                className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-500"
-                                id="password"
-                                type="password"
-                                name="password"
-                                placeholder="Entrez votre mot de passe"
-                                required
-                                minLength={6}
-                            />
-                            <KeyIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+                            Sign in
+                        </button>
                         </div>
-                    </div>
-                </div>
-                {/* LoginButton */}
-                <LoginButton />
+                    </form>
+
+                    <p className="mt-10 text-center text-sm/6 text-gray-500">
+                        Not a member?{' '}
+                        <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
+                        Start a 14 day free trial
+                        </a>
+                    </p>
             </div>
-        </form>
+      </div>
     )
 }
 
 function LoginButton(){
     return (
-        <Button className="mt-4 w-full">
+        <Button className="text-center mt-4 w-full">
             Se connecter <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-500"/>
         </Button>
     )

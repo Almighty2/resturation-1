@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { inter } from "@/app/ui/fonts";
 import "./globals.css";
-
+import AuthProvider from "./components/SessionProvider";
+import { Providers } from "./Provider/Provider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,11 +15,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <body
         className={`${inter.className} antialiased`}
       >
-        {children}
+       <AuthProvider> 
+        <Providers>
+           {children} 
+        </Providers>
+        </AuthProvider> 
       </body>
     </html>
   );
